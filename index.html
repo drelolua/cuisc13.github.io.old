@@ -1,10 +1,11 @@
-<html>
-    <head>
-        <title>Cuisc</title>
-    </head>
-    <body>
-        <h1>This is a world of Cui</h1>
-        <div id="age"></div>
-        <script type="text/javascript" src="cui.js"></script>
-    </body>
-</html>
+---
+layout: default
+title: 我的Blog
+---
+<h2>{{ page.title }}</h2>
+<p>最新文章</p>
+<ul>
+　　{% for post in site.posts %}
+　　    <li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　{% endfor %}
+</ul>
